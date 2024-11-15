@@ -2,7 +2,6 @@
   <div class="container">
     <h2>Cadastrar Série</h2>
     <div class="input-group">
-      <!-- Inputs para nome, gênero e ano -->
       <input
         type="text"
         placeholder="Nome da série"
@@ -21,7 +20,6 @@
         v-model="ano"
         class="input-field"
       />
-      <!-- Botão para cadastrar -->
       <button @click="addSeries" class="btn">Cadastrar Série</button>
     </div>
 
@@ -98,21 +96,18 @@ export default {
 </script>
 
 <style scoped>
-  /* Estilos do container principal */
   .container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
   }
 
-  /* Estilos para o grupo de inputs */
   .input-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
   }
 
-  /* Estilos para os inputs */
   .input-field {
     margin-bottom: 10px;
     padding: 10px;
@@ -121,7 +116,6 @@ export default {
     border-radius: 4px;
   }
 
-  /* Estilos para os botões */
   .btn {
     padding: 10px;
     background-color: #4caf50;
@@ -137,14 +131,12 @@ export default {
     background-color: #45a049;
   }
 
-  /* Estilos para a mensagem de lista vazia */
   .empty-message {
     text-align: center;
     font-style: italic;
     color: #777;
   }
 
-  /* Estilos dos cartões de séries */
   .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -166,7 +158,6 @@ export default {
     margin: 5px 0;
   }
 
-  /* Estilo para o botão de deletar */
   .delete-btn {
     padding: 8px;
     background-color: #ff4d4d;
