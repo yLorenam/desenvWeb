@@ -1,24 +1,26 @@
 <script setup>
-import Router from 'router';
-import AvaliarFIlme from './components/AvaliarFIlme.vue';
-import MeuComponente from './components/AvaliarFIlme.vue';
-import FilmesAvaliados from './components/FilmesAvaliados.vue';
+import { defineComponent } from 'vue';
+import { useRouter } from 'vue-router';
 </script>
 
 <template>
-  <FilmesAvaliados>
-  </FilmesAvaliados>
-  <AvaliarFIlme>
-  </avaliarFilme>
+  <div>
+    <header>
+      <h1>Minha Aplicação de Filmes</h1>
+    </header>
+    <router-view />
+  </div>
 </template>
 
 <style scoped>
-body{
+body {
   background-color: black;
   color: white;
 }
+
 header {
   line-height: 1.5;
+  text-align: center;
 }
 
 .logo {
@@ -27,7 +29,7 @@ header {
 }
 
 @media (min-width: 1024px) {
-  body{
+  body {
     background-color: black;
     color: white;
   }

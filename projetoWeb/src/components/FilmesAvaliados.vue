@@ -1,6 +1,62 @@
 <template>
-    <h2></h2>
-
-
-
-</template>
+    <div class="movie-list">
+      <h2>Lista de Filmes</h2>
+  
+      <ul v-if="movies.length">
+        <li v-for="(movie, index) in movies" :key="index" class="movie-item">
+          <div>
+            <strong>{{ movie.movieName }}</strong> - {{ movie.directorName }}
+            <span>⭐ {{ movie.stars }}</span>
+          </div>
+        </li>
+      </ul>
+      <p v-else>Nenhum filme adicionado ainda.</p>
+  
+      <button class="btn btn-secondary" @click="goBack">Voltar para Avaliação</button>
+    </div>
+  </template>
+  
+  <script>
+  import { movieStore } from "../movieStore";
+  
+  export default {
+    data() {
+      return {
+        movies: movieStore.getMovies(), 
+      };
+    },
+    methods: {
+      goBack() {
+        this.$router.push("/");
+      },
+    },
+  };
+  </script>
+  
+  <style scoped>
+  .movie-list {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .movie-item {
+    background-color: #f8f9fa;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268;
+  }
+  </style>

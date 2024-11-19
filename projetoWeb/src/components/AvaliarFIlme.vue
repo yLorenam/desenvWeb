@@ -1,7 +1,7 @@
 <template>
   <div class="movie-form">
     <h2>Avaliar Filme</h2>
-    
+
     <form @submit.prevent="submitForm">
       <div class="form-group">
         <label for="movieName">Nome do Filme:</label>
@@ -20,37 +20,37 @@
 
       <button type="submit" class="btn btn-primary">Adicionar Filme</button>
     </form>
-    <button type="" class="">Voltar</button>
     
-    <div v-if="submittedMovie">
-      <h3>Filme Adicionado</h3>
-      <p><strong>Filme:</strong> {{ submittedMovie.movieName }}</p>
-      <p><strong>Diretor:</strong> {{ submittedMovie.directorName }}</p>
-      <p><strong>Estrelas:</strong> {{ submittedMovie.stars }}</p>
-    </div>
+    <button class="btn btn-secondary" @click="goToList">Ver Lista de Filmes</button>
   </div>
 </template>
 
 <script>
+import { movieStore } from "../movieStore"; 
+
 export default {
   data() {
     return {
-      movieName: '',
-      directorName: '',
+      movieName: "",
+      directorName: "",
       stars: 1,
-      submittedMovie: null,
     };
   },
   methods: {
     submitForm() {
-      this.submittedMovie = {
+      movieStore.addMovie({
         movieName: this.movieName,
         directorName: this.directorName,
         stars: this.stars,
-      };
-      this.movieName = '';
-      this.directorName = '';
+      });
+      this.movieName = "";
+      this.directorName = "";
       this.stars = 1;
+
+      alert("Filme adicionado com sucesso!");
+    },
+    goToList() {
+      this.$router.push("/FilmesAvaliados");
     },
   },
 };
@@ -77,5 +77,38 @@ export default {
 
 .btn-primary:hover {
   background-color: #0056b3;
+}
+.movie-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.movie-details {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.remove-btn {
+  background-color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  color: black;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: #c82333;
+  padding: 10px;
+}
+
+.remove-btn i {
+  font-size: 20px;
 }
 </style>

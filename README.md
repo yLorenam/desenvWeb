@@ -8,6 +8,12 @@
 
 # npm install
 
-# npm install vue router para instalação do pacote de rotas
+# Instalação das Rotas
+
+# npm install vue-router
+
+# Instalação do pacote de fonte e icone
+
+# npm install @fortawesome/fontawesome-free
 
 # npm run dev para inicializar o projeto
