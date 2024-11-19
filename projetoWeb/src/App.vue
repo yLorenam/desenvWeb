@@ -1,13 +1,22 @@
 <script setup>
-import MeuComponente from './components/MeuComponente.vue';
+import Router from 'router';
+import AvaliarFIlme from './components/AvaliarFIlme.vue';
+import MeuComponente from './components/AvaliarFIlme.vue';
+import FilmesAvaliados from './components/FilmesAvaliados.vue';
 </script>
 
 <template>
-<MeuComponente>
-</MeuComponente>
+  <FilmesAvaliados>
+  </FilmesAvaliados>
+  <AvaliarFIlme>
+  </avaliarFilme>
 </template>
 
 <style scoped>
+body{
+  background-color: black;
+  color: white;
+}
 header {
   line-height: 1.5;
 }
@@ -18,6 +27,10 @@ header {
 }
 
 @media (min-width: 1024px) {
+  body{
+    background-color: black;
+    color: white;
+  }
   header {
     display: flex;
     place-items: center;
