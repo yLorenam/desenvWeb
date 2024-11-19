@@ -1,9 +1,14 @@
+let movies = [
+];
+
 export const movieStore = {
-    movies: [],
-    addMovie(movie) {
-      this.movies.push(movie);
-    },
-    getMovies() {
-      return this.movies;
-    },
-  };
+  getMovies() {
+    return movies;
+  },
+  addMovie(movie) {
+    movies.push(movie);
+  },
+  removeMovie(index) {
+    movies.splice(index, 1);
+  },
+};

@@ -7,6 +7,9 @@
           <div>
             <strong>{{ movie.movieName }}</strong> - {{ movie.directorName }}
             <span>⭐ {{ movie.stars }}</span>
+            <button class="btn btn-danger remove-btn" @click="removeMovie(index)">
+            <i class="fas fa-trash-alt"></i>
+            </button>
           </div>
         </li>
       </ul>
@@ -26,6 +29,11 @@
       };
     },
     methods: {
+
+      removeMovie(index) {
+        movieStore.removeMovie(index); 
+        this.movies = [...movieStore.getMovies()];
+    },
       goBack() {
         this.$router.push("/");
       },

@@ -6,7 +6,7 @@ import { useRouter } from 'vue-router';
 <template>
   <div>
     <header>
-      <h1>Minha Aplicação de Filmes</h1>
+      <h1>Letterboxd Baixa Renda</h1>
     </header>
     <router-view />
   </div>
@@ -15,12 +15,7 @@ import { useRouter } from 'vue-router';
 <style scoped>
 body {
   background-color: black;
-  color: white;
-}
-
-header {
-  line-height: 1.5;
-  text-align: center;
+  color: black;
 }
 
 .logo {
@@ -37,6 +32,8 @@ header {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
+    line-height: 1.5;
+    text-align: center;
   }
 
   .logo {
