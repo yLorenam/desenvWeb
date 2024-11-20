@@ -5,58 +5,88 @@
     <form @submit.prevent="submitForm">
       <div class="form-group">
         <label for="movieName">Nome do Filme:</label>
-        <input type="text" id="movieName" v-model="movieName" required>
+        <input type="text" id="movieName" v-model="movieName" required />
       </div>
 
       <div class="form-group">
         <label for="directorName">Nome do Diretor:</label>
-        <input type="text" id="directorName" v-model="directorName" required>
+        <input type="text" id="directorName" v-model="directorName" required />
       </div>
 
       <div class="form-group">
-        <label for="stars">Quantidade de Estrelas (1-5):</label>
-        <input type="number" id="stars" v-model.number="stars" min="1" max="5" required>
+        <label>Quantidade de Estrelas:</label>
+        <div class="stars">
+          <i
+            class="fa-star"
+            :class="stars >= 1 ? 'fas' : 'far'"
+            @click="setStars(1)"
+          ></i>
+          <i
+            class="fa-star"
+            :class="stars >= 2 ? 'fas' : 'far'"
+            @click="setStars(2)"
+          ></i>
+          <i
+            class="fa-star"
+            :class="stars >= 3 ? 'fas' : 'far'"
+            @click="setStars(3)"
+          ></i>
+          <i
+            class="fa-star"
+            :class="stars >= 4 ? 'fas' : 'far'"
+            @click="setStars(4)"
+          ></i>
+          <i
+            class="fa-star"
+            :class="stars >= 5 ? 'fas' : 'far'"
+            @click="setStars(5)"
+          ></i>
+        </div>
       </div>
 
       <button type="submit" class="btn btn-primary">Adicionar Filme</button>
     </form>
-    
-    <button class="btn btn-secondary" @click="goToList">Ver Lista de Filmes</button>
   </div>
 </template>
 
 <script>
-import { movieStore } from "../movieStore"; 
+import { movieStore } from "../movieStore";
 
 export default {
   data() {
     return {
       movieName: "",
       directorName: "",
-      stars: 1,
+      stars: 0, 
     };
   },
   methods: {
+    setStars(star) {
+      this.stars = star; 
+    },
     submitForm() {
+      if (this.stars === 0) {
+        alert("Por favor, selecione uma quantidade de estrelas!");
+        return;
+      }
+
       movieStore.addMovie({
         movieName: this.movieName,
         directorName: this.directorName,
         stars: this.stars,
       });
+
       this.movieName = "";
       this.directorName = "";
-      this.stars = 1;
+      this.stars = 0;
 
       alert("Filme adicionado com sucesso!");
-    },
-    goToList() {
-      this.$router.push("/FilmesAvaliados");
     },
   },
 };
 </script>
 
-<style scoped>
+<<style scoped>
 .movie-form {
   max-width: 400px;
   margin: 0 auto;
@@ -78,37 +108,24 @@ export default {
 .btn-primary:hover {
   background-color: #0056b3;
 }
-.movie-display {
+
+.stars {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #f8f9fa;
-  padding: 10px;
-  margin-top: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.movie-details {
-  flex-grow: 1;
-  margin-right: 10px;
-}
-
-.remove-btn {
-  background-color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
-  color: black;
+  gap: 5px;
+  font-size: 24px;
   cursor: pointer;
 }
 
-.remove-btn:hover {
-  background-color: #c82333;
-  padding: 10px;
+.stars .fas {
+  color: #ffcc00; 
 }
 
-.remove-btn i {
-  font-size: 20px;
+.stars .far {
+  color: #ccc; 
+}
+
+.stars i:hover,
+.stars i:hover ~ i {
+  color: #ffcc00; 
 }
 </style>

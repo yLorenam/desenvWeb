@@ -14,8 +14,6 @@
         </li>
       </ul>
       <p v-else>Nenhum filme adicionado ainda.</p>
-  
-      <button class="btn btn-secondary" @click="goBack">Voltar para Avaliação</button>
     </div>
   </template>
   
@@ -34,9 +32,6 @@
         movieStore.removeMovie(index); 
         this.movies = [...movieStore.getMovies()];
     },
-      goBack() {
-        this.$router.push("/");
-      },
     },
   };
   </script>
@@ -45,8 +40,8 @@
   .movie-list {
     max-width: 600px;
     margin: 0 auto;
+    color: black;
   }
-  
   .movie-item {
     background-color: #f8f9fa;
     padding: 10px;
