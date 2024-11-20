@@ -10,9 +10,8 @@
             <router-link to="/dashboard/filmes">Filmes Avaliados</router-link>
           </li>
         </ul>
+        <button class="btn btn-prymary" @click="logout">Loggout</button>
       </nav>
-  
-      <!-- Área de conteúdo dinâmico -->
       <main class="content">
         <router-view></router-view>
       </main>
@@ -20,9 +19,15 @@
   </template>
   
   <script>
-  export default {
-    name: "Dashboard",
-  };
+export default {
+  name: "Dashboard",
+  methods: {
+    logout() {
+      localStorage.removeItem("auth");
+      this.$router.push("/");
+    }
+  }
+};
   </script>
   
   <style scoped>

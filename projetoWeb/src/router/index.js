@@ -3,9 +3,12 @@ import Avaliacao from '../components/AvaliarFIlme.vue';
 import Filmes from '../components/FilmesAvaliados.vue';
 import Login from '../components/Login.vue';
 import dashboard from '@/components/dashboard.vue';
+import Cadastro from '@/components/Cadastro.vue';
+import { compile } from 'vue';
 
 const routes = [
   {path: '/', component: Login},
+  {path: "/Cadastro", component: Cadastro},
   {
     path: "/dashboard",
     component: dashboard,

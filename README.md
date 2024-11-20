@@ -16,4 +16,10 @@
 
 # npm install @fortawesome/fontawesome-free
 
-# npm run dev para inicializar o projeto
+# Iniciar o servidor
+
+# npm init server.js
+
+#  Inicializar o projeto
+
+# npm run dev

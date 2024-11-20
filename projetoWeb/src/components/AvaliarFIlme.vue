@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import { movieStore } from "../movieStore";
+import { movieStore } from "../armazenamento";
 
 export default {
   data() {
