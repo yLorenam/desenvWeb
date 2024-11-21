@@ -5,7 +5,7 @@
     <ul v-if="movies.length">
       <li v-for="(movie, index) in movies" :key="index" class="movie-item">
         <div class="movie-info">
-          <strong>{{ movie.movieName }}</strong> - {{ movie.directorName }}
+          <strong> Filme: {{ movie.movieName }}</strong> - Diretor: {{ movie.directorName }}
           <span>⭐ {{ movie.stars }}</span>
         </div>
         <button class="btn btn-danger remove-btn" @click="removeMovie(index)">
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { movieStore } from "../armazenamento";
+import { movieStore } from "../armazenamento.js";
 
 export default {
   data() {

@@ -9,6 +9,9 @@
           <li>
             <router-link class="filmesAvaliados" to="/dashboard/filmes">Filmes Avaliados</router-link>
           </li>
+          <li>
+            <router-link class="sorteio" to="/dashboard/sorteio">Indicação de Filmes</router-link>
+          </li>
         </ul>
         <button class="btn btn-prymary" @click="logout">Logout</button>
       </nav>

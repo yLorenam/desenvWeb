@@ -4,6 +4,7 @@ import Filmes from '../components/FilmesAvaliados.vue';
 import Login from '../components/Login.vue';
 import dashboard from '@/components/dashboard.vue';
 import Cadastro from '@/components/Cadastro.vue';
+import Sorteio from '../components/Sorteio.vue';
 
 const routes = [
   {path: '/', component: Login},
@@ -19,6 +20,10 @@ const routes = [
       {
         path: "Filmes",
         component: Filmes,
+      },
+      {
+        path: "Sorteio",
+        component: Sorteio,
       },
     ],
   },
