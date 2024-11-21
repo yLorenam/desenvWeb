@@ -1,22 +1,22 @@
 <template>
     <div class="register-form">
-      <h2>Cadastro de Usuário</h2>
-      <form @submit.prevent="registerUser">
-        <div class="form-group">
-          <label for="username">Email:</label>
-          <input type="text" id="username" v-model="username" required />
-        </div>
+    <h2>Cadastro de Usuário</h2>
+    <form @submit.prevent="registerUser">
+      <div class="form-group">
+        <label for="username">Email:</label>
+        <input type="text" id="username" v-model="username" required />
+      </div>
 
-        <div class="form-group">
-          <label for="password">Senha:</label>
-          <input type="password" id="password" v-model="password" required />
-        </div>
+      <div class="form-group">
+        <label for="password">Senha:</label>
+        <input type="password" id="password" v-model="password" required />
+      </div>
 
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-        <button class="btn btn-secondary" @click="gotoLogin">Voltar</button>
-      </form>
-    </div>
-  </template>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+      <button class="btn btn-secondary" @click="gotoLogin">Voltar</button>
+    </form>
+  </div>
+</template>
 
   <script>
   import userStore from "../armazenamento.js";

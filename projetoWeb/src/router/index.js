@@ -4,7 +4,6 @@ import Filmes from '../components/FilmesAvaliados.vue';
 import Login from '../components/Login.vue';
 import dashboard from '@/components/dashboard.vue';
 import Cadastro from '@/components/Cadastro.vue';
-import { compile } from 'vue';
 
 const routes = [
   {path: '/', component: Login},
@@ -32,7 +31,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const isAuthenticated = localStorage.getItem('auth');
   if (to.meta.requiresAuth && !isAuthenticated) {
-    next('/'); 
+    next('/');
   } else {
     next();
   }
