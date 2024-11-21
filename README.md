@@ -19,7 +19,15 @@ Instale o pacote do Vue Router para gerenciar a navegação entre as telas do se
 npm install vue-router
 ```
 
-### 3. Inicializar o Projeto
+### 3. Instalação do Pacote de Fonte e Ícone
+
+Instale o FontAwesome para incluir ícones e fontes no seu projeto.
+
+```bash
+npm install @fortawesome/fontawesome-free
+```
+
+### 4. Inicializar o Projeto
 
 Para rodar o projeto, execute o comando abaixo e acesse seu aplicativo em desenvolvimento.
 
