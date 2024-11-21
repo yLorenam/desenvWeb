@@ -1,25 +1,27 @@
-# desenvWeb
+# DesenvWeb
 
-# Iniciar o Projeto
+Este repositório contém o projeto **DesenvWeb**, com o objetivo de desenvolver site Vue contendo cadastro e listagem de itens.
 
-# Instalação das Depenências
+## Iniciar o Projeto
 
-# Certifique que está dentro da pasta raiz do projeto para a instalação das dependencias, pois o npm não encontrará as pastas do projeto caso não esteja.
+### 1. Instalação das Dependências
 
-# npm install
+Certifique-se de estar na pasta raiz do projeto para a instalação das dependências, pois o `npm` não encontrará as pastas do projeto caso não esteja.
 
-# Instalação das Rotas
+```bash
+npm install
+```
+### 2. Instalação das Rotas
 
-# npm install vue-router
+Instale o pacote do Vue Router para gerenciar a navegação entre as telas do seu projeto.
 
-# Instalação do pacote de fonte e icone
+```bash
+npm install vue-router
+```
 
-# npm install @fortawesome/fontawesome-free
+### 3. Inicializar o Projeto
 
-# Iniciar o servidor
+Para rodar o projeto, execute o comando abaixo e acesse seu aplicativo em desenvolvimento.
 
-# npm init server.js
-
-#  Inicializar o projeto
-
-# npm run dev
+```bash
+npm run dev
