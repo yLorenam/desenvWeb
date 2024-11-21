@@ -57,12 +57,12 @@ export default {
     return {
       movieName: "",
       directorName: "",
-      stars: 0, 
+      stars: 0,
     };
   },
   methods: {
     setStars(star) {
-      this.stars = star; 
+      this.stars = star;
     },
     submitForm() {
       if (this.stars === 0) {
@@ -86,7 +86,7 @@ export default {
 };
 </script>
 
-<<style scoped>
+<style scoped>
 .movie-form {
   max-width: 400px;
   margin: 0 auto;
@@ -117,15 +117,15 @@ export default {
 }
 
 .stars .fas {
-  color: #ffcc00; 
+  color: #ffcc00;
 }
 
 .stars .far {
-  color: #ccc; 
+  color: #ccc;
 }
 
 .stars i:hover,
 .stars i:hover ~ i {
-  color: #ffcc00; 
+  color: #ffcc00;
 }
 </style>
